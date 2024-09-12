@@ -4,11 +4,8 @@ import React from 'react'
 const email = 'shenoyvrathik@gmail.com'
 function AgentDetail({ listingDetail }) {
   const handleSendMessage = () => {
-    if (listingDetail?.email) {
       window.location.href = `mailto:${email}`;
-    } else {
-      alert('Email address is not available.');
-    }
+   
   };
 
   return (
