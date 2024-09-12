@@ -1,5 +1,7 @@
 "use client"
 import React, { useState } from 'react';
+import Link from "next/link";
+import { ArrowBigRightDash } from "lucide-react"; 
 
 // Sample data for demonstration
 const sampleUsers = [
@@ -58,6 +60,12 @@ const LeaderBoard = () => {
           All Time
         </button>
       </div>
+      <Link href="/reward">
+        <div className="flex flex-col items-center justify-center cursor-pointer mb-6">
+          <span className="text-lg font-semibold mb-1">Reward</span>
+          <ArrowBigRightDash className="text-blue-500 hover:text-blue-700 w-8 h-8" />
+        </div>
+      </Link>
       <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
         {users.map((user) => (
           <div key={user.id} className="p-4 border border-gray-300 rounded-lg flex items-center">
