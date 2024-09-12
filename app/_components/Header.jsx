@@ -82,7 +82,7 @@ function Header() {
       {menuOpen && (
         <div className="md:hidden bg-white/30 backdrop-blur-md shadow-md border-t">
           <nav className="flex flex-col p-4">
-            {["/", "/heatmap", "/calander", "/feedback"].map((href, index) => (
+            {["/", "/heatmap", "/calendar", "/feedback","/virtual-guide"].map((href, index) => (
               <Link key={index} href={href} className={`py-2 font-semibold text-lg ${path === href ? 'text-yellow-400' : 'text-white'}`}>
                 {href === '/' ? 'Home' : href.slice(1).charAt(0).toUpperCase() + href.slice(2)}
               </Link>
