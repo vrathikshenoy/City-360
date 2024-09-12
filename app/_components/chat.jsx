@@ -26,7 +26,7 @@ export function Chat() {
   return (
     <main className="flex flex-col w-full h-screen bg-white pt-8">
       <header className="px-6 py-4 border-b w-full max-w-3xl mx-auto bg-gray-50 shadow-sm">
-        <h1 className="text-3xl font-semibold text-center text-gray-800">Tour Guide</h1>
+        <h1 className="text-3xl font-semibold text-center text-gray-800">Travel/Tour Guide</h1>
       </header>
 
       <section className="p-6">
