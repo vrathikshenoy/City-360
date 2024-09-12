@@ -33,8 +33,7 @@ const LeaderBoard = () => {
 
   const handleFilterChange = (period) => {
     setSelectedPeriod(period);
-    // Fetch and update users based on the selected period
-    // This is where you'd make an API call or filter the data
+    
   };
 
   return (
