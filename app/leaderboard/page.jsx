@@ -8,21 +8,21 @@ const sampleUsers = [
   {
     id: 1,
     photoUrl:
-      "https://static.boredpanda.com/blog/wp-content/uploads/2017/04/Virrappan2-58f79980ae6fb__880.jpg",
+      "/v.png",
     name: "Vrathik",
     points: 1200,
   },
   {
     id: 2,
     photoUrl:
-      "https://plus.unsplash.com/premium_photo-1688891564708-9b2247085923?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8cmFuZG9tJTIwcGVyc29ufGVufDB8fDB8fHww",
+      "/a.png",
     name: "Abigna ",
     points: 1100,
   },
   {
     id: 3,
     photoUrl:
-      "https://images.pexels.com/photos/18545323/pexels-photo-18545323/free-photo-of-portrait-of-african-man-in-sunlight.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "/r.jpg",
     name: "Rithvik",
     points: 1000,
   },
@@ -35,10 +35,9 @@ const LeaderBoard = () => {
 
   const handleFilterChange = (period) => {
     setSelectedPeriod(period);
-    // Fetch and update users based on the selected period
+    
   };
 
-  // Framer Motion Variants
   const cardVariants = {
     hidden: { opacity: 0, y: 20 },
     visible: { opacity: 1, y: 0 },
@@ -52,7 +51,7 @@ const LeaderBoard = () => {
     hover: { scale: 1.1, transition: { duration: 0.3 } },
   };
 
-  // Medal Icons
+
   const MedalBadge = ({ rank }) => {
     let medalIcon;
     if (rank === 1) {
