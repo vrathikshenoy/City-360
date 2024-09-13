@@ -52,9 +52,9 @@ return (
           <tbody className="text-gray-700">
             {data.map((item, index) => (
               <tr key={index} className="hover:bg-gray-50">
-                <td className="py-2 px-4 border-b border-r border-gray-200">{item.From || "N/A"}</td>
-                <td className="py-2 px-4 border-b border-r border-gray-200">{item.To || "N/A"}</td>
-                <td className="py-2 px-4 border-b border-r border-gray-200">{item.Route || "N/A"}</td>
+                <td className="py-2 px-4 border-b border-r border-gray-200">{item.From }</td>
+                <td className="py-2 px-4 border-b border-r border-gray-200">{item.To}</td>
+                <td className="py-2 px-4 border-b border-r border-gray-200">{item.Route }</td>
                 <td className="py-2 px-4 border-b border-gray-200">
                   {item.From && item.To ? (
                     <a
@@ -65,7 +65,7 @@ return (
                     >
                       View Map
                     </a>
-                  ) : "N/A"}
+                  ): ""}
                 </td>
               </tr>
             ))}
