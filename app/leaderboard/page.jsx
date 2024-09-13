@@ -9,48 +9,24 @@ const sampleUsers = [
     id: 1,
     photoUrl:
       "https://static.boredpanda.com/blog/wp-content/uploads/2017/04/Virrappan2-58f79980ae6fb__880.jpg",
-    name: "John Doe",
+    name: "Vrathik",
     points: 1200,
   },
   {
     id: 2,
     photoUrl:
       "https://plus.unsplash.com/premium_photo-1688891564708-9b2247085923?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8cmFuZG9tJTIwcGVyc29ufGVufDB8fDB8fHww",
-    name: "Jane Smith",
+    name: "Abigna ",
     points: 1100,
   },
   {
     id: 3,
     photoUrl:
       "https://images.pexels.com/photos/18545323/pexels-photo-18545323/free-photo-of-portrait-of-african-man-in-sunlight.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-    name: "Alice Johnson",
+    name: "Rithvik",
     points: 1000,
   },
-  {
-    id: 4,
-    photoUrl: "https://i.pinimg.com/736x/be/a3/49/bea3491915571d34a026753f4a872000.jpg",
-    name: "Robert Brown",
-    points: 900,
-  },
-  {
-    id: 5,
-    photoUrl: "https://t4.ftcdn.net/jpg/06/78/09/75/360_F_678097580_mgsNEISedI7fngOwIipYtEU0T6SN8qKv.jpg",
-    name: "Tony",
-    points: 700,
-  },
-  {
-    id: 6,
-    photoUrl: "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/35af6a41332353.57a1ce913e889.jpg",
-    name: "Mark",
-    points: 900,
-  },
-  {
-    id: 7,
-    photoUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSbzHC2g2Lx53J4PnTylpe-Flxj3yl4MeYDlA&s",
-    name: "Peter",
-    points: 900,
-  },
-  // Add more users as needed
+ 
 ];
 
 const LeaderBoard = () => {
