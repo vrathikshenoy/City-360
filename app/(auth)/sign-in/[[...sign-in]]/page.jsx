@@ -26,7 +26,7 @@ export default function Page() {
             </h2>
 
             <p className="mt-4 leading-relaxed text-white/90">
-              Join our community in making a difference. List your waste, find recycling solutions, and contribute to a cleaner planet.
+              Join our community in making a difference. List your waste, find recycling solutions, and contribute to a cleaner City .
             </p>
           </div>
         </section>
@@ -43,11 +43,11 @@ export default function Page() {
               </a>
 
               <h1 className="mt-2 text-2xl font-bold text-gray-900 sm:text-3xl md:text-4xl">
-                Welcome to EcoWaste
+              Welcome to City 360
               </h1>
 
               <p className="mt-4 leading-relaxed text-gray-500">
-                Join our community in making a difference. List your waste, find recycling solutions, and contribute to a cleaner planet.
+                Join our community in making a difference. List your waste, find recycling solutions, and contribute to a cleaner City.
               </p>
             </div>
 
