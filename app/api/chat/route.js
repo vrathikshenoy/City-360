@@ -75,7 +75,7 @@ async function loadAndProcessData() {
         const validDocs = docs
           .map((doc) => ({
             pageContent: doc.pageContent || '',
-            metadata: { ...doc.metadata, source: 'PDF' },
+            metadata: { ...doc.metadata, source: 'PDF', filename: file },
           }))
           .filter((doc) => doc.pageContent.trim() !== ''); // Remove empty content
         allDocs = allDocs.concat(validDocs);
@@ -168,14 +168,15 @@ export async function POST(req) {
     const { messages } = await req.json();
     const lastMessage = messages[messages.length - 1];
 
- 
     const isCalendarQuery = lastMessage.content.toLowerCase().includes('calendar') || 
                             lastMessage.content.toLowerCase().includes('events');
+    const isBusOrRouteQuery = lastMessage.content.toLowerCase().includes('bus') || 
+                              lastMessage.content.toLowerCase().includes('route');
 
     let context = '';
     if (isCalendarQuery) {
       const events = await fetchSupabaseData();
-      const month = 9; 
+      const month = 9; // September
       context = filterAndFormatEvents(events, month);
     } else if (vectorStore) {
       const relevantDocs = await vectorStore.similaritySearch(lastMessage.content, 5);
@@ -184,14 +185,20 @@ export async function POST(req) {
       console.warn('Vector store not initialized');
     }
 
-    if (!context || context.length < 500) {
-      console.log('Insufficient context, fetching additional information');
+    // If it's a bus or route query and we don't have sufficient context from PDFs
+    if (isBusOrRouteQuery && (!context || context.length < 500)) {
+      console.log('Insufficient bus/route information from PDFs, fetching additional information');
       const webResults = await webSearch(`Mangalore ${lastMessage.content}`);
-      const wikiResults = await wikipediaSearch('Mangalore');
-      context += `\n\n${webResults}\n\n${wikiResults}`;
+      context += `\n\n${webResults}`;
     }
 
-  
+    // For non-bus/route queries, add Wikipedia results if context is still insufficient
+    if (!isBusOrRouteQuery && (!context || context.length < 500)) {
+      console.log('Insufficient general context, fetching additional information');
+      const wikiResults = await wikipediaSearch('Mangalore');
+      context += `\n\n${wikiResults}`;
+    }
+
     const generalInfo = `
 Mangalore is a major port city on the west coast of India. It is located between the Arabian Sea and the Western Ghats mountain range.
 Key facts about Mangalore:
